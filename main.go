@@ -6,17 +6,17 @@ import (
 	"strings"
 )
 
-func attack(charName, charClass string) string {
-	if charClass == "warrior" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(3, 5))
+func attack(char_name, char_class string) string {
+	if char_class == "warrior" {
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", char_name, 5+randint(3, 5))
 	}
 
-	if charClass == "mage" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(5, 10))
+	if char_class == "mage" {
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", char_name, 5+randint(5, 10))
 	}
 
-	if charClass == "healer" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(-3, -1))
+	if char_class == "healer" {
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", char_name, 5+randint(-3, -1))
 	}
 	return "неизвестный класс персонажа"
 }
@@ -35,13 +35,13 @@ func defence(char_name, char_class string) string {
 }
 
 // обратите внимание на "if else" и на "else"
-func special(charName, charClass string) string {
-	if charClass == "warrior" {
-		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
-	} else if charClass == "mage" {
-		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
-	} else if charClass == "healer" {
-		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
+func special(char_name, char_class string) string {
+	if char_class == "warrior" {
+		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", char_name, 80+25)
+	} else if char_class == "mage" {
+		return fmt.Sprintf("%s применил специальное умение `Атака %d`", char_name, 5+40)
+	} else if char_class == "healer" {
+		return fmt.Sprintf("%s применил специальное умение `Защита %d`", char_name, 10+30)
 	} else {
 		return "неизвестный класс персонажа"
 	}
